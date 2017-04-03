@@ -19,7 +19,6 @@ public class CsvParser {
 
     public CsvParser(String path){
         this.path = path;
-        readAll();
     }
 
     public CsvParser(String path, Properties properties){
