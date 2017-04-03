@@ -105,6 +105,7 @@ public class CsvParser {
 
     //setHeader переводит строку line из CSV стиля в список и присваевает его  полю header
     public void setHeader(String line){
+        header.clear();
         Collections.addAll(header, line.split(properties.delimiter));
         properties.header = true;
     }

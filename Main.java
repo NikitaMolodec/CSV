@@ -5,17 +5,15 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        Properties properties = new Properties(";", false);
+        Properties properties = new Properties(";", true);
         CsvParser csv = new CsvParser("src/test.txt", properties);
 
-        List<List<String>> test = csv.readAll();
-
-        csv.printAll();
-        csv.toFile("src/output.txt");
+        csv.readAll();
         List<String> line = new ArrayList<>();
-        Collections.addAll(line, "I", "O", "P");
-        csv.addColumn(line);
-        csv.printAll();
+        Collections.addAll(line, "I", "O");
+        csv.setHeader("3;4");
+        csv.addRaw(line, 1);
+        csv.toFile("src/output.txt");
     }
 
 
